@@ -18,6 +18,7 @@ describe User do
 
 
 
+
   describe "when name is not present" do
     before { @user.name = " " }
     it { should_not be_valid }
