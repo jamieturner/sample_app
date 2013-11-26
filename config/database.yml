@@ -2,6 +2,7 @@ development:
   adapter: postgresql
   database: sampleapp
   host: localhost
+  encoding: unicode
   pool: 5
   timeout: 5000
 
@@ -9,6 +10,7 @@ test:
   adapter: postgresql
   database: sampleapp
   host: localhost
+  encoding: unicode
   pool: 5
   timeout: 5000
 
