@@ -7,27 +7,27 @@ Braintree::Configuration.public_key = "pdm38t7nnycrmrpx"
 Braintree::Configuration.private_key = "a074f2341674613fd36e8caeebadc068"
 
 
-get "/" do
-  erb :braintree
-end
+result = Braintree::Transaction.sale(
+  :amount => "1000.00",
+  :credit_card => {
+    :number => "5105105105105100",
+    :expiration_month => "05",
+    :expiration_year => "12"
+  }
+)
 
-post "/create_transaction" do
-  result = Braintree::Transaction.sale(
-    :amount => "1000.00",
-    :credit_card => {
-      :number => params[:number],
-      :cvv => params[:cvv],
-      :expiration_month => params[:month],
-      :expiration_year => params[:year]
-    },
-    :options => {
-      :submit_for_settlement => true
-    }
-  )
-
-  if result.success?
-    "<h1>Success! Transaction ID: #{result.transaction.id}</h1>"
+if result.success?
+  puts "Transaction ID: #{result.transaction.id}"
+  # status will be authorized or submitted_for_settlement
+  puts "Transaction Status: #{result.transaction.status}"
+else
+  puts "Message: #{result.message}"
+  if result.transaction.nil?
+    # validation errors prevented transaction from being created
+    p result.errors
   else
-    "<h1>Error: #{result.message}</h1>"
+    puts "Transaction ID: #{result.transaction.id}"
+    # status will be processor_declined, gateway_rejected, or failed
+    puts "Transaction Status: #{result.transaction.status}"
   end
 end
