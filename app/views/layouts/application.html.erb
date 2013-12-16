@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+    <script type="text/javascript"charset="UTF-8">
+      $(function () {
+        $('#alert').click(function () {
+          alert('Hello, world!');
+          return false;
+        })
+      });
+    </script>
+
+    
+
+
+
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.rails.js" %>
+
+<%= csrf_meta_tag %>
+
+
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag "application", media: "all",
                                            "data-turbolinks-track" => true %>
