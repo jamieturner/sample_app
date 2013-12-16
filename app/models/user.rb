@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
-                    format:     { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
+    format:     { with: VALID_EMAIL_REGEX },
+    uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
   has_many :microposts, dependent: :destroy
-
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-    def self.to_csv(options = {})
+  def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |product|
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
   private
 
-    def create_remember_token
-      self.remember_token = User.encrypt(User.new_remember_token)
-    end
+  def create_remember_token
+    self.remember_token = User.encrypt(User.new_remember_token)
+  end
 end

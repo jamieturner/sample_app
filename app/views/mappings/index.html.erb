@@ -1,0 +1,22 @@
+<% provide(:title, 'All users') %>
+<h1>All mappings</h1>
+
+<p>
+  Download:
+  <%= link_to "CSV", users_path(format: "csv") %> |
+  <%= link_to "Excel", users_path(format: "xls") %>
+</p>
+
+
+
+<ul class="mappings">
+  <%= render @mappings %>
+</ul>
+
+
+
+<h2>Import Products</h2>
+<%= form_tag import_mappings_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

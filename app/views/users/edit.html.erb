@@ -10,6 +10,10 @@
 
       <%= f.label :email %>
       <%= f.text_field :email %>
+        <%= image_tag @user.avatar.url(:thumb) %>
+
+            <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>
@@ -20,7 +24,6 @@
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+
   </div>
 </div>
