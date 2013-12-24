@@ -2,7 +2,7 @@ class BraintreeFormBuilder < ActionView::Helpers::FormBuilder
   include ActionView::Helpers::AssetTagHelper
   include ActionView::Helpers::TagHelper
 
-  def initialize(object_name, object, template, options, proc)
+  def initialize(object_name, object, template, options)
     super
     @braintree_params = @options[:params]
     @braintree_errors = @options[:errors]

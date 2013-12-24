@@ -38,4 +38,8 @@ SampleApp::Application.configure do
  #   :domain => 'localhost:3000', # your domain to identify your server when connecting
  # }
 
+ 
+ PUBLISHABLE_KEY = "pk_test_ZDGtg430OrlEmaHnhJFEfCE9"
+ SECRET_KEY = "sk_test_IkzixacJX3zSanfKPSFfetvq"
+
 end

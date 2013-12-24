@@ -1,0 +1,16 @@
+Your subscription is <%= @User.subscription %>
+
+<br>
+<br>
+
+<td><%= 
+if @User.subscription == "Gold"
+	link_to "Upgrade to Diamond", {:controller => :subscriptions, :action => :update}, {:method => :put } 
+	else
+	end %></td>
+
+
+<br>
+<br>
+
+<td><%= link_to "Cancel membership", {:controller => :subscriptions, :action => :destroy}, {:method => :put } %></td>

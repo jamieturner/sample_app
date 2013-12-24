@@ -17,6 +17,8 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+
+
 module SampleApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -51,5 +53,8 @@ module SampleApp
       :authentication => :plain
     }
 
+
   end
+
+  
 end

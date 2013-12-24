@@ -1,0 +1,12 @@
+Your subscription is <%= @User.subscription %>
+
+<br>
+<br>
+
+<td><%= link_to "Upgrade to Diamond", {:controller => :charges, :action => :update}, {:method => :put } %></td>
+
+
+<br>
+<br>
+
+<td><%= link_to "Cancel membership", {:controller => :charges, :action => :destroy}, {:method => :put } %></td>

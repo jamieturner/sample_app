@@ -6,4 +6,5 @@ config.action_mailer.smtp_settings = {
   user_name:            'jrturner992@gmail.com',
   password:             '425jelly',
   authentication:       'plain',
-  enable_starttls_auto: true  }
+enable_starttls_auto: true  }
+

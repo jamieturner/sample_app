@@ -1,0 +1,17 @@
+<%= form_tag subscriptions_path do %>
+  <article>
+    <label class="amount">
+      <span>Sign up for the bronze 'flies by post' subscription package - just £5 a month!</span>
+    </label>
+  </article>
+
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-email="<%= @User.email %>"
+          data-currency="GBP"></script>
+
+
+<% end %>

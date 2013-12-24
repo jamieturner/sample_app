@@ -2,43 +2,6 @@
 
  <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-
-
-
-<a href="#" id="alert" data-message="Hello from UJS">Click Here</a>
-
-<form action="/products" data-remote="true" method="get">  <p>
-
-<input id="tag" type="text" name="tags" value="">
-
-
-    <a class="tag">aaa</a><br/>
-    <a class="tag">bbb</a><br/>
-    <a class="tag">ccc</a><br/>
-    <a class="tag">ddd</a><br/>
-    <a class="tag">eee</a>
-   <input type="submit" value="Search" />
-
-</form>
-
-<p id="highlighted_text">Aliquam eget ipsum accumsan, convallis nulla sit amet, auctor est. Nam quis condimentum eros, vel condimentum lacus. In id enim at sem gravida sodales eu vitae risus. Morbi sed mi sit amet lectus rhoncus gravida a sit amet nisl. Phasellus quis ultricies leo. Duis vel lobortis mauris. Suspendisse sed diam eu turpis facilisis rutrum vitae vitae dolor.</p>
-<form id="myform" class="form-horizontal">
-    </fieldset>
-    <div class="control-group">
-        <input type="text" class="input-small" id="input1"> <a href="#" id="copy1" class="btn btn-primary">Copy to 1</a>
-
-    </div>
-    <div class="control-group">
-        <input type="text" class="input-small" id="input2"> <a href="#" id="copy2" class="btn btn-primary">Copy to 2</a>
-
-    </div>
-    <div class="control-group">
-        <input type="text" class="input-small" id="input3"> <a href="#" id="copy3" class="btn btn-primary">Copy to 3</a>
-
-    </div>
-    </fieldset>
-</form>
-
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
@@ -60,8 +23,6 @@
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
-
-
 
   </div>
 </div>
