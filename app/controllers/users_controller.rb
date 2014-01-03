@@ -49,12 +49,14 @@ class UsersController < ApplicationController
       UserMailer.welcome_email(@user).deliver
 
       # Subscribe user to list
-      gb = Gibbon::API.new("fe6a623db7bd901c4f06991e1ea3ffb9-us5")
 
-      gb.lists.subscribe({:id => "b9839b86d0", :email => {:email => @user.email}, :merge_vars => {:FNAME => @user.name, :LNAME => @user.name}, :double_optin => false})
+    #Uncomment in production
+      #gb = Gibbon::API.new("fe6a623db7bd901c4f06991e1ea3ffb9-us5")
+      #gb.lists.subscribe({:id => "b9839b86d0", :email => {:email => @user.email}, :merge_vars => {:FNAME => @user.name, :LNAME => @user.name}, :double_optin => false})
 
 
       sign_in @user
+         
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
 

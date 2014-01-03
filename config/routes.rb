@@ -19,9 +19,9 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   #match '/subscription', to: 'static_pages#subscription', via: 'get'
 
-  put "subscriptions/update" => "subscriptions#update"
+  post "subscriptions/new" => "subscriptions#create"
 
-  put "subscriptions/destroy" => "subscriptions#destroy"
+  #put "subscriptions/destroy" => "subscriptions#destroy"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

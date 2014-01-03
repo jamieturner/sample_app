@@ -1,16 +1,31 @@
-Your subscription is <%= @User.subscription %>
+<td>
+#if @User.subscription.(try)blank?
 
+ <br>
+
+ <%= link_to "New Gold subscription", new_subscription_path(:bob => "Gold") %>
+ <br>
+
+ <%=  link_to "New Diamond subscription", new_subscription_path(:bob => "Diamond") %>
+
+
+  <br>
+
+#else
+
+	"somethingelse"
+#{}"Your subscription is" @User.subscription
+
+#link_to "Upgrade to Diamond", {:controller => :subscriptions, :action => :update, :plan => "Diamond"}, {:method => :put }
+#link_to "Cancel membership", {:controller => :subscriptions, :action => :destroy}, {:method => :put }
+ #end
+ #end 
+
+%>
+	
+</td>
+</td>
 <br>
 <br>
 
-<td><%= 
-if @User.subscription == "Gold"
-	link_to "Upgrade to Diamond", {:controller => :subscriptions, :action => :update}, {:method => :put } 
-	else
-	end %></td>
-
-
-<br>
-<br>
-
-<td><%= link_to "Cancel membership", {:controller => :subscriptions, :action => :destroy}, {:method => :put } %></td>
+<td>

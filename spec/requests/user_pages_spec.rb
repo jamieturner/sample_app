@@ -96,7 +96,7 @@ end
     describe "with valid information" do
       before do
         fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
+        fill_in "Email",        with: "bob@mail.com"
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
       end
@@ -108,7 +108,7 @@ end
 
       describe "after saving the user" do
         before { click_button submit }
-        let(:user) { User.find_by(email: 'user@example.com') }
+        let(:user) { User.find_by(email: 'bob@mail.com') }
 
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
@@ -145,7 +145,7 @@ end
 
     describe "with valid information" do
       let(:new_name)  { "New Name" }
-      let(:new_email) { "new@example.com" }
+      let(:new_email) { "bob2@mail.com" }
       before do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
