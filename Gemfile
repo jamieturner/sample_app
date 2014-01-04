@@ -10,7 +10,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem "mandrill-api", "~> 1.0.49"
-gem "braintree", '2.3.1'
+#gem "braintree"
 gem 'roo'
 #gem "ruby-debug", "~> 0.10.4"
 gem "paperclip", "~> 3.0"
